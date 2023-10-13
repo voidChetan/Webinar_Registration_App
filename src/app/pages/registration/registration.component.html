@@ -1,0 +1,103 @@
+<section class="h-100 bg-dark">
+    <div class="container py-1 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                                alt="Sample photo" class="img-fluid"
+                                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+                                <h4 class="mb-5 text-uppercase">Database Webinar 30th Oct Registration</h4>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-1">
+                                        <div class="form-outline">
+                                            <input type="text" #name="ngModel" required [(ngModel)]="registrationObj.name"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1m">
+                                                Full name  <span class="text-danger">*</span>
+                                            <span class="text-danger" *ngIf="name.touched && name.errors?.['required']">Required</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-1">
+                                        <div class="form-outline">
+                                            <input type="number" #mobile="ngModel" [(ngModel)]="registrationObj.mobileNo" minlength="10"
+                                                maxlength="10" required class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1n">
+                                                Mobile No
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" *ngIf="mobile.touched && mobile.errors?.['required']">Required</span>
+                                                <span class="text-danger" *ngIf="mobile.touched && mobile.errors?.['minlength']">Min 10 Chars</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-1">
+                                        <div class="form-outline">
+                                            <input type="text" [(ngModel)]="registrationObj.emailId"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1m1">EmailId</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-1">
+                                        <div class="form-outline">
+                                            <input type="text" [(ngModel)]="registrationObj.linkdinProfileUrl"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1n1">Linkdin Profile Url</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-1">
+                                    <input type="checkbox" [(ngModel)]="registrationObj.isWorking" />
+                                    <label class="form-label" for="form3Example8">Are you Working</label>
+                                </div>
+
+                                <div class="d-md-flex justify-content-start align-items-center mb-1 py-2">
+
+                                    <h6 class="mb-0 me-4">Gender: </h6>
+
+                                    <div class="form-check form-check-inline mb-0 me-4">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            [(ngModel)]="registrationObj.gender" value="Male" />
+                                        <label class="form-check-label" for="femaleGender">Female</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline mb-0 me-4">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            [(ngModel)]="registrationObj.gender" value="FeMale" />
+                                        <label class="form-check-label" for="maleGender">Male</label>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-1">
+                                    <input type="text" [(ngModel)]="registrationObj.collegeName"
+                                        class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example99">College Name</label>
+                                </div>
+
+                                <div class="form-outline mb-1">
+                                    <input type="text" [(ngModel)]="registrationObj.city"
+                                        class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example97">City</label>
+                                </div>
+
+                                <div class="d-flex justify-content-end pt-3">
+                                    <button type="button" class="btn btn-light btn-lg">Reset all</button>
+                                    <button type="button" class="btn btn-warning btn-lg ms-2" (click)="onRegister()">Register</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

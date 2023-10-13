@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>Mobile No</th>
+                    <th>Gender</th>
+                    <th>Is Working</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of list;let sr= index">
+                    <td>{{sr+1}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.mobileNo}}</td>
+                    <td>{{data.gender}}</td>
+                    <td>{{data.isWorking ? 'Working': 'Not-Working'}}</td>
+                    <td>{{data.city}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
